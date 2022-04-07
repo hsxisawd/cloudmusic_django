@@ -25,7 +25,7 @@ SECRET_KEY = ')55cqg-r_qj2-t$c9!@_q*@n&h1#w5c9z%&_sr)x9^pd$+tyd!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://django-1rx0-1774044-1306796063.ap-shanghai.run.tcloudbase.com/']
+ALLOWED_HOSTS = ['https://django-x5sd-1774044-1306796063.ap-shanghai.run.tcloudbase.com']
 
 
 # Application definition

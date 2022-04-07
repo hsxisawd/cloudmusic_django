@@ -1,0 +1,103 @@
+{% load static  %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>网易云热门歌单</title>
+        <link rel="icon" type="image/x-icon" href={% static 'img/favicon.ico' %} />
+        <link rel="stylesheet" type="text/css" href={% static  'css/index.css' %}  />
+    </head>
+    <body>
+        <header>
+            <h1>网易云热门歌单可视化大屏</h1>
+            <div class="showTime"></div>
+            <script>
+                var t = null;
+                t = setTimeout(time, 1000); //开始运行
+                function time() {
+                    clearTimeout(t); // 清除定时器
+                    dt = new Date();
+                    var y = dt.getFullYear();
+                    var mt = dt.getMonth() + 1;
+                    var day = dt.getDate();
+                    var h = dt.getHours();
+                    var m = dt.getMinutes();
+                    var s = dt.getSeconds();
+                    document.querySelector(".showTime").innerHTML = 
+                        "当前时间：" + y + "年" + mt + "月" + day + "日" + 
+                        "-" + h + "时" + m + "分" + s + "秒";
+                    t = setTimeout(time, 1000);
+                }
+            </script>
+        </header>
+
+        <section class="mainbox">
+            <div class="column">
+                <div class="panel bar1">
+                    <h2>最受欢迎的歌单类型TOP7</h2>
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+
+                <div class="panel line1">
+                    <h2>歌单分享量和评论数变化 <a href="javascript:;">2018</a><a href="javascript:;">2019</a></h2>
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+                
+                <div class="panel pie1">
+                    <h2>歌单歌曲数量范围</h2>
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="no">
+                    <div class="no-hd">
+                        <ul>
+                            <li>{{ 男 }}</li>
+                            <li>{{ 女 }}</li>
+                        </ul>
+                    </div>
+                    <div class="no-bd">
+                        <ul>
+                            <li>男生创建歌单数</li>
+                            <li>女生创建歌单数</li>
+                        </ul>
+                    </div>
+
+                    <div class="map">
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="panel bar2">
+                    <h2>最受欢迎的歌单TOP5</h2>
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+
+                <div class="panel line2">
+                    <h2>歌单收藏量变化</h2>
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+
+                <div class="panel pie2">
+                    <h2>语种类型歌单播放量</h2>
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </section>
+        <script src={% static 'js/flexible.js' %}></script>
+        <script src={% static 'js/echarts.min.js' %}></script>
+        <script src={% static 'js/jquery.js' %}></script>
+        <script src="{% static 'js/china.js' %}"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+    </body>
+</html>

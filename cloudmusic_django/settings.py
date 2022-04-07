@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'cloudmusic',
         'USER': 'root',
         'PASSWORD': 'Hsx20020610',
-        'HOST': 'localhost',
+        'HOST': '10.0.224.5',
         'PORT': '3306',
     }
 }

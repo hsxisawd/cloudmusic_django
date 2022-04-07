@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 # 端口5000 (可删除)
 EXPOSE 8000
 # 执行
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+CMD ["uwsgi --ini uwsgi.ini"]
